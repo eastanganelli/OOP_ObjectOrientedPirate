@@ -3,9 +3,10 @@ class Ship:
         self._draft = draft
         self._crew = crew
     
-    def is_worh_it(self) -> int:
-        if (self._draft - self._crew * 1.5) > 20:
-            return True
+    def is_worth_it(self) -> int:
+        value: int = self._draft - self._crew * 1.5
+        if value > 20:
+            return value
         raise ValueError
     
     def __str__(self) -> str:
@@ -17,10 +18,11 @@ class Cargo(Ship):
         self.__cargo = cargo
         self.__quality = quality
         
-    def is_worh_it(self) -> int:
+    def is_worth_it(self) -> int:
         addition: float = 3.5 if self.__quality == 1 else ( 2 if self.__quality == 0.5 else 0.5 )
-        if (self._draft + self.__cargo * addition - self._crew * 1.5) > 20:
-            return True
+        value: int = self._draft + self.__cargo * addition - self._crew * 1.5
+        if value > 20:
+            return value
         raise ValueError
     
     def __str__(self) -> str:
@@ -31,9 +33,10 @@ class Cruise(Ship):
         super().__init__(draft, crew)
         self.__passengers = passengers
     
-    def is_worh_it(self) -> int:
-        if (self._draft + self.__passengers * 2.25 - self._crew * 1.5) > 20:
-            return True
+    def is_worth_it(self) -> int:
+        value: int = self._draft + self.__passengers * 2.25 - self._crew * 1.5
+        if value > 20:
+            return value
         raise ValueError
     
     def __str__(self) -> str:

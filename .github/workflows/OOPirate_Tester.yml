@@ -15,8 +15,7 @@ jobs:
     - name: Clone remote repository
       env:
         # PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
-      run: |
-        git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test
+      run: git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test
       #  rm -rf test/*
       #  cp -r temp_repo/* test/
       #  rm -rf temp_repo

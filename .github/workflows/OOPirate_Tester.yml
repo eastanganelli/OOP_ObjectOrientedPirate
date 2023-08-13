@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Clone remote repository
-      env:
+      #env:
         # PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
       run: |
         'echo "Ready for download"'

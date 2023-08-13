@@ -16,7 +16,7 @@ jobs:
       #env:
         # PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
       run: |
-        'dir && tree'
+        ls
       # 'echo "Ready for download" && git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test'
       #  rm -rf test/*
       #  cp -r temp_repo/* test/

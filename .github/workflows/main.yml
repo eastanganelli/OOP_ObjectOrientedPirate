@@ -18,10 +18,10 @@ jobs:
         PRIVATE_REPO_TOKEN: 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
       run: |
         git clone https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test
+        pytest test
       #  rm -rf test/*
       #  cp -r temp_repo/* test/
       #  rm -rf temp_repo
-        pytest test
         
     #- name: Commit changes
     #  run: |

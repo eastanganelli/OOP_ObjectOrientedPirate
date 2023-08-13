@@ -17,6 +17,8 @@ jobs:
         # PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
       run: |
         ls
+        git clone https://github.com/eastanganelli/EstadoMaterias.git
+        pip install -r requirements.txt
       # 'echo "Ready for download" && git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test'
       #  rm -rf test/*
       #  cp -r temp_repo/* test/
@@ -25,4 +27,4 @@ jobs:
     - name: Running Tests
       run: |
         'pip install -r requirements'
-        'pytest test'
+        'pytest test'~

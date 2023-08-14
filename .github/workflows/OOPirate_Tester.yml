@@ -19,7 +19,7 @@ jobs:
         then
            pytest test
         else
-          echo "Folder test doens't exists"
+          echo "Folder test doesn't exists"
         fi
     
     - name: Clone Testing Repository and execute pytest

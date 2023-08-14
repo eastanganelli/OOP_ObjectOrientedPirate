@@ -15,12 +15,12 @@ jobs:
     - name: Running Repository Test
       run: |
         pip install -r requirements.txt
-        'if [ -d "test" ];
+        if [ -d "test" ];
         then
            pytest test
         else
           echo "Folder test doens't exists"
-        fi'
+        fi
     
     - name: Clone Testing Repository and execute pytest
       run: |

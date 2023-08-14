@@ -12,7 +12,7 @@ class Ship:
     def __str__(self) -> str:
         return f"Cargo: {self._draft} - Crew: {self._crew}"
 
-class Cargo(Ship):~
+class Cargo(Ship):
     def __init__(self, cargo: int, quality: float, draft: int, crew: int) -> None:
         super().__init__(draft, crew)
         self.__cargo = cargo

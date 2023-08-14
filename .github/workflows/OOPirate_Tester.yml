@@ -25,5 +25,4 @@ jobs:
         
     - name: Running Tests
       run: |
-        pip install -r requirements
         pytest test

@@ -11,18 +11,22 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
-    - name: Clone remote repository
-      #env:
-        # PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+    
+    - name: Running Repository Test
       run: |
         pip install -r requirements.txt
+        'if [ -d "test" ];
+        then
+           pytest test
+        else
+          echo "Folder test doens't exists"
+        fi'
+    
+    - name: Clone Testing Repository and execute pytest
+      run: |
+        pip install -r requirements.txt
+        rm -r test
         git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test
-      # 'echo "Ready for download" && git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test'
       #  rm -rf test/*
       #  cp -r temp_repo/* test/
       #  rm -rf temp_repo
-        
-    - name: Running Tests
-      run: |
-        pytest test

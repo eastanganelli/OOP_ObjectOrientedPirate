@@ -17,7 +17,7 @@ jobs:
         pip install -r requirements.txt
         if [ -d "test" ];
         then
-           pytest test
+          pytest test
         else
           echo "Folder test doesn't exists"
         fi
@@ -32,9 +32,9 @@ jobs:
     - name: Clone Testing Repository and execute pytest
       run: |
         pip install -r requirements.txt
-        rm -r test
+        if [ -d "test" ];
+        then
+          rm -r test
+        fi
         git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test
         pytest test
-      #  rm -rf test/*
-      #  cp -r temp_repo/* test/
-      #  rm -rf temp_repo

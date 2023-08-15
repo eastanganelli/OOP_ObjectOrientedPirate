@@ -5,7 +5,7 @@ on:
       - ENTREGA
 
 jobs:
-  clone_and_replace:
+  internal_testing:
     runs-on: ubuntu-latest
     
     steps:
@@ -21,12 +21,20 @@ jobs:
         else
           echo "Folder test doesn't exists"
         fi
+
+  external_testing:
+    runs-on: ubuntu-latest
     
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
     - name: Clone Testing Repository and execute pytest
       run: |
         pip install -r requirements.txt
-        rm -r test/*
+        rm -r test
         git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test
+        pytest test
       #  rm -rf test/*
       #  cp -r temp_repo/* test/
       #  rm -rf temp_repo

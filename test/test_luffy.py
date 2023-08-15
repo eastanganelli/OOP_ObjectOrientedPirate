@@ -6,6 +6,7 @@ from src.ships import Ship, Cargo, Cruise
 
 def test_with_file():
     url="https://my.api.mockaroo.com/oop_pirate.csv?key=44ac9940"
+    
     try:
         ShipLists = csv.reader(codecs.iterdecode(requests.get(url).iter_lines(), encoding="utf-8"), delimiter=",")
     except (requests.exceptions.ConnectionError, requests.exceptions.RequestException):

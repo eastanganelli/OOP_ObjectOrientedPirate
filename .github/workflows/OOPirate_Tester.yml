@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
+    - name: Internal Pytest Running
       uses: actions/checkout@v2
 
     - name: Install require Packages
@@ -29,8 +29,12 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
+    - name: External Pytest Running
       uses: actions/checkout@v2
+
+    - name: Install require Packages
+      run: |
+        pip install -r requirements.txt
 
     - name: Clone Testing Repository and execute pytest
       run: |

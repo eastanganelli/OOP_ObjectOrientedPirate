@@ -35,6 +35,3 @@ jobs:
         rm -r test
         git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test
         pytest test
-      #  rm -rf test/*
-      #  cp -r temp_repo/* test/
-      #  rm -rf temp_repo

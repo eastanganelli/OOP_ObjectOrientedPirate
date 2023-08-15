@@ -11,10 +11,13 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Install require Packages
+      run: |
+        pip install -r requirements.txt
     
     - name: Running Repository Test
       run: |
-        pip install -r requirements.txt
         if [ -d "test" ];
         then
           pytest test
@@ -31,7 +34,6 @@ jobs:
 
     - name: Clone Testing Repository and execute pytest
       run: |
-        pip install -r requirements.txt
         if [ -d "test" ];
         then
           rm -r test

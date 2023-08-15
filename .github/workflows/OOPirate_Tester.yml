@@ -36,5 +36,5 @@ jobs:
         then
           rm -r test
         fi
-        git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test
+        git clone https://github.com/UF-LP2/OOPyrate_Boss.git test
         pytest test

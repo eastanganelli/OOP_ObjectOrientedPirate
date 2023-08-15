@@ -8,13 +8,14 @@ def read_pirate_notes() -> list[any]:
         reader = csv.reader(file)
         header: bool = True
         for ship in reader:
-            print(ship)
             if not header:    
                 if ship[2] == '' and ship[3] == '':
                     shipList.append(Ship(int(ship[0]), int(ship[1])))
                 elif ship[3] == '':
                     shipList.append(Cruise(int(ship[2]), int(ship[0]), int(ship[1])))
                 else:
+                    if ship[2] == '':
+                        continue
                     shipList.append(Cargo(int(ship[2]), float(ship[3]), int(ship[0]), int(ship[1])))
             else:
                 header = False        
@@ -27,9 +28,14 @@ def pirate() -> None:
 
 if __name__ == "__main__":
     try:
-        ShipLists = read_pirate_notes()
+        ShipLists: any = read_pirate_notes()
     except FileNotFoundError:
-        exit("File Not found")
+        exit("No se encontró el archivo")
     else:
         for ship in ShipLists:
-            print(ship)
+            try:
+                print(ship)
+                print(f"tiene un valor de {ship.is_worth_it()}")
+            except ValueError:
+                print("La carga no tiene valor")
+            print("------------")

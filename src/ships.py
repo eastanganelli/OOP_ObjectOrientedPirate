@@ -31,7 +31,7 @@ class Cargo(Ship):
         raise ValueError
     
     def __str__(self) -> str:
-        return super().__str__() + f"Cargo: {self.__cargo} - Quality: {self.__quality} - "
+        return super().__str__() + f"Cargo: {self.__cargo} - Quality: {self.__quality}"
 
 class Cruise(Ship):
     

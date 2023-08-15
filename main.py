@@ -8,15 +8,18 @@ def read_pirate_notes() -> list[any]:
         reader = csv.reader(file)
         header: bool = True
         for ship in reader:
-            if not header:    
-                if ship[2] == '' and ship[3] == '':
-                    shipList.append(Ship(int(ship[0]), int(ship[1])))
-                elif ship[3] == '':
-                    shipList.append(Cruise(int(ship[2]), int(ship[0]), int(ship[1])))
-                else:
-                    if ship[2] == '':
-                        continue
-                    shipList.append(Cargo(int(ship[2]), float(ship[3]), int(ship[0]), int(ship[1])))
+            if not header:
+                try:
+                    if ship[2] == '' and ship[3] == '':
+                        shipList.append(Ship(int(ship[0]), int(ship[1])))
+                    elif ship[3] == '':
+                        shipList.append(Cruise(int(ship[2]), int(ship[0]), int(ship[1])))
+                    else:
+                        if ship[2] == '':
+                            continue
+                        shipList.append(Cargo(int(ship[2]), float(ship[3]), int(ship[0]), int(ship[1])))
+                except ValueError:
+                    continue
             else:
                 header = False        
         return shipList

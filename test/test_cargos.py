@@ -1,6 +1,10 @@
+from os.path import exists
 import pytest
-from src.ships import Cargo
 
+if exists('../src/Cargo.py'):
+    from src.Cargo import Cargo
+else:
+    from src.ships import Cargo
 
 def test_is_cargo() -> None:
     listaCargos: list[int, float, int, int] = [

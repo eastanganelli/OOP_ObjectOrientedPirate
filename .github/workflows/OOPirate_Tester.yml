@@ -32,6 +32,9 @@ jobs:
     - name: Clone Testing Repository and execute pytest
       run: |
         pip install -r requirements.txt
+        ls
         rm -r test
+        ls
         git clone -b OOPirate_Tester https://github.com/eastanganelli/OOP_ObjectOrientedPirate.git test
+        ls
         pytest test

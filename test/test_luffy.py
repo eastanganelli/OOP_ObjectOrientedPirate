@@ -1,8 +1,23 @@
+from os.path import exists
 import pytest
 import csv
 import requests
 import codecs
-from src.ships import Ship, Cargo, Cruise
+
+if exists('../src/Cargo.py'):
+    from src.Ship import Ship
+else:
+    from src.ships import Ship
+
+if exists('../src/Cargo.py'):
+    from src.Cruise import Cruise
+else:
+    from src.ships import Cruise
+
+if exists('../src/Cargo.py'):
+    from src.Cargo import Cargo
+else:
+    from src.ships import Cargo
 
 def test_with_file():
     url="https://my.api.mockaroo.com/oop_pirate.csv?key=44ac9940"

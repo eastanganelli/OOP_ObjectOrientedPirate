@@ -12,4 +12,4 @@ def test_is_Cruise() -> None:
     with pytest.raises(ValueError):
         for cruise in listaCruise:
             cruise: Cruise = Cruise(cruise[0], cruise[1], cruise[2])
-            assert (cruise.is_worth_it() >= 20) == True 
+            assert (cruise.is_worth_it() >= 20) == True

@@ -12,4 +12,4 @@ def test_is_ship() -> None:
     with pytest.raises(ValueError):
         for ship in listaShip:
             ship: Ship = Ship(ship[0], ship[1])
-            assert (ship.is_worth_it() >= 20) == True 
+            assert (ship.is_worth_it() >= 20) == True
